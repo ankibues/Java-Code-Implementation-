@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Parsing101
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Parsing101\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Parsing101()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Parsing101\r\n
+comment2.params=
+comment2.target=void\ tester()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=parser\ country
+comment3.target=java.lang.String\ countryInfo(org.apache.commons.csv.CSVParser,\ java.lang.String)
+comment4.params=parser\ exportItem1\ exportItem2
+comment4.target=java.lang.String\ listExportersTwoProducts(org.apache.commons.csv.CSVParser,\ java.lang.String,\ java.lang.String)
+comment5.params=parser\ exportItem
+comment5.target=int\ numberOfExporters(org.apache.commons.csv.CSVParser,\ java.lang.String)
+comment6.params=parser\ value
+comment6.target=void\ bigExporters(org.apache.commons.csv.CSVParser,\ java.lang.String)
+numComments=7

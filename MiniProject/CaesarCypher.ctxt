@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=CaesarCypher
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ CaesarCypher\ here.\r\n\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=key
+comment1.target=CaesarCypher(int)
+comment2.params=input
+comment2.target=java.lang.String\ encrypt(java.lang.String)
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=input
+comment3.target=java.lang.String\ decrypt(java.lang.String)
+numComments=4
