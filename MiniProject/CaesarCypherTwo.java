@@ -20,9 +20,9 @@ public class CaesarCypherTwo
     public CaesarCypherTwo(int key1, int key2)
     {
         // initialise instance variables
-        String alphabet= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String shiftedAlphabetkey1 = alphabet.substring(key1) + alphabet.substring(0,key1);
-        String shiftedAlphabetkey2 = alphabet.substring(key2) + alphabet.substring(0,key2);
+        alphabet= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        shiftedAlphabetkey1 = alphabet.substring(key1) + alphabet.substring(0,key1);
+        shiftedAlphabetkey2 = alphabet.substring(key2) + alphabet.substring(0,key2);
         mainKey1= key1;
         mainKey2= key2;
     }

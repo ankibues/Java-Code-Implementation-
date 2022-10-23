@@ -29,9 +29,34 @@ public class TestCaesarCypherTwo
         FileResource fr= new FileResource();
         String message= fr.asString();
         CaesarCypherTwo cc = new CaesarCypherTwo(17,3);
+        System.out.println("The ecrypted message using the two keys is  >  " + cc.encrypt(message));
+        System.out.println("To check if it worked, here is the decrypted version \n" + cc.decrypt(cc.encrypt(message)));
+        System.out.println("Now using Break Caesar Cypher method (statistical one) to break Caesar Cypher \n"+ breakCaesarCypher(cc.encrypt(message)));
+    
+    
+    
+    
+    }
+    
+    public String breakCaesarCypher(String input){
+        String s1 = halfOfString(input,0);
+        String s2 = halfOfString(input,1);
+        int[] freqs1 = countLetters(s1);
+        int maxDex1 = maxIndex(freqs1);
+        int dkey1 = maxDex1 - 4;  
+        if (maxDex1<4){
+        dkey1 = 26 - (4- maxDex1);
+        }
+        int[] freqs2 = countLetters(s2);
+        int maxDex2 = maxIndex(freqs2);
+        int dkey2 = maxDex2 - 4;  
+        if (maxDex2<4){
+        dkey2 = 26 - (4- maxDex2);
+        }
         
-    
-    
+        System.out.println("The two keys are " + dkey1 + " and "+ dkey2);
+        CaesarCypherTwo cc = new CaesarCypherTwo(dkey1,dkey2);
+        return cc.decrypt(input);
     
     
     }
