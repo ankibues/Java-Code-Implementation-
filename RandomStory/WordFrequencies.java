@@ -52,7 +52,18 @@ public class WordFrequencies
         System.out.println(myFreqs.get(k)+ "\t" + myWords.get(k));       
         }
         
-    
+        System.out.println("The word that occurs most often and its count are " + myWords.get(findIndexOfMax()) +" "+ myFreqs.get(findIndexOfMax()) );
     }
     
+    public int findIndexOfMax(){
+        int maxval= 0;
+        int index = 0;
+        for(int k=0; k<myFreqs.size();k++){
+            if(myFreqs.get(k)>maxval){
+            maxval = myFreqs.get(k);
+            index= k;
+            }
+        }
+        return index;     
+    }
 }
