@@ -30,7 +30,7 @@ public class TestCaesarCypher
         // put your code here
         FileResource fr= new FileResource();
         String message= fr.asString();
-        CaesarCypher cc = new CaesarCypher(18);
+        CaesarCypher cc = new CaesarCypher(15);
         System.out.println("The ecrypted message is  >  " + cc.encrypt(message));
         System.out.println("To check if it worked, here is the decrypted version \n" + cc.decrypt(cc.encrypt(message)));
         System.out.println("Now using Break Caesar Cypher method (statistical one) to break Caesar Cypher \n"+ breakCaesarCypher(cc.encrypt(message)));

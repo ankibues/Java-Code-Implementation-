@@ -52,6 +52,7 @@ public class WordLengths
             }
             
              if(Character.isLetter(word.charAt(0))== false && Character.isLetter(word.charAt(word.length()-1)) == false ){
+                if(word.length()<= 2){ break;}
                 if(word.length()-2 >= counts.length)
                 { counts[counts.length-1] +=1 ;}
                 else

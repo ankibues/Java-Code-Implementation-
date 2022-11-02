@@ -28,10 +28,13 @@ public class TestCaesarCypherTwo
     public void simpleTests(){
         FileResource fr= new FileResource();
         String message= fr.asString();
-        CaesarCypherTwo cc = new CaesarCypherTwo(17,3);
-        System.out.println("The ecrypted message using the two keys is  >  " + cc.encrypt(message));
-        System.out.println("To check if it worked, here is the decrypted version \n" + cc.decrypt(cc.encrypt(message)));
-        System.out.println("Now using Break Caesar Cypher method (statistical one) to break Caesar Cypher \n"+ breakCaesarCypher(cc.encrypt(message)));
+        //String message= "Aal uttx hm aal Qtct Fhljha pl Wbdl. Pvxvxlx";
+        //CaesarCypherTwo cc = new CaesarCypherTwo(14,24);
+        //System.out.println("Decrypted message is \n"+cc.decrypt(message));
+        
+        //System.out.println("The ecrypted message using the two keys is  >  " + cc.encrypt(message));
+        //System.out.println("To check if it worked, here is the decrypted version \n" + cc.decrypt(cc.encrypt(message)));
+        System.out.println("Now using Break Caesar Cypher method (statistical one) to break Caesar Cypher \n"+ breakCaesarCypher(message));
     
     
     
