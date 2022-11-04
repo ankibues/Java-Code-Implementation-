@@ -49,7 +49,7 @@ public class CharactersInPlay
         for(String s:resource.lines()){
             int dot = s.indexOf(".");
             if (dot!= -1){
-               update(s.substring(0,dot));
+               update((s.substring(0,dot)).stripLeading());
             }
             
         }
@@ -61,8 +61,38 @@ public class CharactersInPlay
         findAllCharacters();
         
         System.out.println("# of characters: "+ CharacterName.size());
+        /*
         for(int k=0; k<CharacterName.size();k++){
-        System.out.println("The character name is "+ CharacterName.get(k)+ " and they speak " + CharacterCount.get(k)+" times");       
+            if(CharacterCount.get(k)>2){
+                System.out.println("The character name is "+ CharacterName.get(k)+ " and they speak " + CharacterCount.get(k)+" times");    
+            }
         }
+        */
+        characterWithNumParts(10, 15);
+        
+        System.out.println("The word that occurs most often is " + CharacterName.get(findIndexOfMax()) + " and its count is " + CharacterCount.get(findIndexOfMax()) );
+    }
+    public void characterWithNumParts(int num1, int num2)
+    {
+        for(int k=0; k<CharacterName.size();k++){
+            
+            if(CharacterCount.get(k)>= num1 && CharacterCount.get(k)<= num2 )
+            {
+                System.out.println("The character name is "+ CharacterName.get(k)+ " and they speak " + CharacterCount.get(k)+" times");    
+            }
+        }
+    
+    }
+    
+    public int findIndexOfMax(){
+        int maxval= 0;
+        int index = 0;
+        for(int k=0; k<CharacterCount.size();k++){
+            if(CharacterCount.get(k)>maxval){
+            maxval = CharacterCount.get(k);
+            index= k;
+            }
+        }
+        return index;     
     }
 }
