@@ -11,6 +11,8 @@ public class GladLib {
     private ArrayList<String> timeList;
     private ArrayList<String> verbList;
     private ArrayList<String> fruitList;
+    private ArrayList<String> alreadyusedList;
+    private int count;
     private Random myRandom;
     
     private static String dataSourceURL = "http://dukelearntoprogram.com/course3/data";
@@ -19,11 +21,15 @@ public class GladLib {
     public GladLib(){
         initializeFromSource(dataSourceDirectory);
         myRandom = new Random();
+        count= 0;
+        alreadyusedList= new ArrayList<String>();
     }
     
     public GladLib(String source){
         initializeFromSource(source);
         myRandom = new Random();
+        count= 0;
+        alreadyusedList= new ArrayList<String>();
     }
     
     private void initializeFromSource(String source) {
@@ -88,6 +94,15 @@ public class GladLib {
         String prefix = w.substring(0,first);
         String suffix = w.substring(last+1);
         String sub = getSubstitute(w.substring(first+1,last));
+        count +=1;
+        int index = alreadyusedList.indexOf(sub);
+        if(index == -1){
+            alreadyusedList.add(sub);
+        }
+        else
+        { 
+            System.out.println("Oh, seems like "+ sub + " has been used before!  \n ");
+        }
         return prefix+sub+suffix;
     }
     
@@ -138,9 +153,11 @@ public class GladLib {
     }
     
     public void makeStory(){
+        alreadyusedList.clear();
         System.out.println("\n");
         String story = fromTemplate("data/madtemplate2.txt");
         printOut(story, 60);
+        System.out.println("total number of words replaced are"+ count);
     }
     
 
