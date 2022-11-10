@@ -1,5 +1,5 @@
 import edu.duke.*;
-import java.util.ArrayList;
+import java.util.*;
 /**
  * Write a description of class WordFrequencies here.
  *
