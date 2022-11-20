@@ -61,14 +61,14 @@ public class CharactersInPlay
         findAllCharacters();
         
         System.out.println("# of characters: "+ CharacterName.size());
-        /*
+        
         for(int k=0; k<CharacterName.size();k++){
-            if(CharacterCount.get(k)>2){
+            if(CharacterCount.get(k)>1){
                 System.out.println("The character name is "+ CharacterName.get(k)+ " and they speak " + CharacterCount.get(k)+" times");    
             }
         }
-        */
-        characterWithNumParts(10, 15);
+        
+        //characterWithNumParts(10, 15);
         
         System.out.println("The word that occurs most often is " + CharacterName.get(findIndexOfMax()) + " and its count is " + CharacterCount.get(findIndexOfMax()) );
     }

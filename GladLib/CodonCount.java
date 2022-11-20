@@ -80,15 +80,42 @@ public class CodonCount
         for(String line : resource.lines()){
          line= line.toLowerCase();
          line = line.trim();
-         //buildCodonMap(0, line);
+         buildCodonMap(0, line);
          //buildCodonMap(1, line);
-         buildCodonMap(2, line);
-         //printCodonCounts(0, dnaCodons.get(getMostCommonCodon()));
-         System.out.println("the most common codon is "+ getMostCommonCodon()+ " and its count is"+ dnaCodons.get(getMostCommonCodon()));
-         printCodonCounts(1,5);
+         //buildCodonMap(2, line);
+        }
+         printCodonCounts(0, dnaCodons.get(getMostCommonCodon()));
+         //System.out.println("the most common codon is "+ getMostCommonCodon()+ " and its count is"+ dnaCodons.get(getMostCommonCodon()));
+         //printCodonCounts(1,5);
          
+            
+        }
+            
+    public void test2(){
+            dnaCodons.clear();
+            FileResource resource = new FileResource();
+            for(String line : resource.lines()){
+                 line= line.toLowerCase();
+                 line = line.trim();
+                 buildCodonMap(0, line);
             }
-    
+            System.out.println("the unique codons with 0 reading frame are "+ dnaCodons.size() );
+            
+            dnaCodons.clear();
+            for(String line : resource.lines()){
+                 line= line.toLowerCase();
+                 line = line.trim();
+                 buildCodonMap(1, line);
+            }
+            System.out.println("the unique codons with 1 reading frame are "+ dnaCodons.size() );
+            
+            dnaCodons.clear();
+            for(String line : resource.lines()){
+                 line= line.toLowerCase();
+                 line = line.trim();
+                 buildCodonMap(2, line);
+            }
+            System.out.println("the unique codons with 2 reading frame are "+ dnaCodons.size() );
     }
     }
 

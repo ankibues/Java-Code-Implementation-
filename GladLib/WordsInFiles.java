@@ -93,15 +93,20 @@ public class WordsInFiles
     
     public void tester(){
         buildWordFileMap();
-        System.out.println("The maximum number of files any word is in , is "+ maxNumber());
-        ArrayList<String> listS= wordsInNumFiles(maxNumber());
-        System.out.println("The following words are in the max number of files: ");
+        //System.out.println("The maximum number of files any word is in , is "+ maxNumber());
+        //ArrayList<String> listS = wordsInNumFiles(4);
+        //System.out.println("The  words that appear in 4 files are : "+ listS.size());
+        /**
         for(int i=0; i< listS.size();i++){
         System.out.println("The word "+ listS.get(i)+ "is in the following file ");
         printFilesln(listS.get(i));
         }  
-    
-    
+        **/
+        ArrayList<String> list = wordsinfile.get("tree");
+        for(int i=0; i< list.size();i++){
+            System.out.println(list.get(i));
+        }
+        
     }
     
 }
