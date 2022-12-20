@@ -30,7 +30,84 @@ public class EarthQuakeClient {
         }
         return answer;
     }
-
+    
+    public ArrayList<QuakeEntry> filterByDepth(ArrayList<QuakeEntry> quakeData,
+    double minDepth, double maxDepth) {
+        ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
+        for(QuakeEntry qe: quakeData){
+            if(qe.getDepth() < maxDepth && qe.getDepth()> minDepth ){
+                answer.add(qe);
+            }
+        }
+        return answer;
+    }
+    
+    public ArrayList<QuakeEntry> filterByPhrase(ArrayList<QuakeEntry> quakeData, String where,
+                        String phrase){
+        ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
+        for(QuakeEntry qe: quakeData){
+            if(where.equals("start") && qe.getInfo().startsWith(phrase)){
+                answer.add(qe);
+            }
+            else if(where.equals("end") && qe.getInfo().endsWith(phrase)){
+                answer.add(qe);
+            }
+            else if(where.equals("any") && qe.getInfo().contains(phrase)){
+                answer.add(qe);
+            }
+        }
+        
+        return answer;          
+                        
+    }
+    
+    public void quakesOfDepth(){
+        EarthQuakeParser parser = new EarthQuakeParser();
+        String source = "data/nov20quakedatasmall.atom";
+        ArrayList<QuakeEntry> list  = parser.read(source);
+        System.out.println("read data for "+list.size()+" quakes");
+        ArrayList<QuakeEntry> depcheck = filterByDepth(list,-10000.0,-5000.0);
+        for (QuakeEntry qe : depcheck) {
+            System.out.println(qe);
+        }
+        System.out.println("Found "+ depcheck.size()+ " earthquakes with this criteria");
+    
+    }
+    public void quakesByPhrase(){
+        EarthQuakeParser parser = new EarthQuakeParser();
+        String source = "data/nov20quakedatasmall.atom";
+        ArrayList<QuakeEntry> list  = parser.read(source);
+        System.out.println("read data for "+list.size()+" quakes");
+        // testing 1st case......
+        ArrayList<QuakeEntry> depcheck = filterByPhrase(list,"end","California");
+        for (QuakeEntry qe : depcheck) {
+            System.out.println(qe);
+        }
+        System.out.println("Found "+ depcheck.size()+ " earthquakes that match" 
+                + "California at the end");
+                
+        // testing 2nd case......
+        ArrayList<QuakeEntry> phrscheck1 = filterByPhrase(list,"any","Can");
+        for (QuakeEntry qe : phrscheck1) {
+            System.out.println(qe);
+        }
+        System.out.println("Found "+ phrscheck1.size()+ " earthquakes that match" 
+                + "Can at any place");
+                
+        
+        // testing 3rd case......
+        ArrayList<QuakeEntry> phrscheck2 = filterByPhrase(list,"start","Explosion");
+        for (QuakeEntry qe : phrscheck2) {
+            System.out.println(qe);
+        }
+        System.out.println("Found "+ phrscheck2.size()+ " earthquakes that match" 
+                + "Explosion at the start");
+    
+    
+    }
+    
+    
+    
     public void dumpCSV(ArrayList<QuakeEntry> list){
         System.out.println("Latitude,Longitude,Magnitude,Info");
         for(QuakeEntry qe : list){
@@ -40,7 +117,7 @@ public class EarthQuakeClient {
                 qe.getMagnitude(),
                 qe.getInfo());
         }
-
+    
     }
 
     public void bigQuakes() {
