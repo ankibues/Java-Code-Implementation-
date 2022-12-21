@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=LargestQuakes
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ LargestQuakes\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=LargestQuakes()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ LargestQuakes\r\n
+comment2.params=
+comment2.target=void\ findLargestQuakes()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=quakeData\ howMany
+comment3.target=java.util.ArrayList\ getLargest(java.util.ArrayList,\ int)
+comment4.params=data
+comment4.target=int\ indexOfLargest(java.util.ArrayList)
+numComments=5
