@@ -63,46 +63,47 @@ public class EarthQuakeClient {
     
     public void quakesOfDepth(){
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         System.out.println("read data for "+list.size()+" quakes");
-        ArrayList<QuakeEntry> depcheck = filterByDepth(list,-10000.0,-5000.0);
+        ArrayList<QuakeEntry> depcheck = filterByDepth(list,-4000.0,-2000.0);
         for (QuakeEntry qe : depcheck) {
-            System.out.println(qe);
+            //System.out.println(qe);
         }
         System.out.println("Found "+ depcheck.size()+ " earthquakes with this criteria");
     
     }
     public void quakesByPhrase(){
         EarthQuakeParser parser = new EarthQuakeParser();
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         System.out.println("read data for "+list.size()+" quakes");
+      /* 
         // testing 1st case......
         ArrayList<QuakeEntry> depcheck = filterByPhrase(list,"end","California");
+        
         for (QuakeEntry qe : depcheck) {
-            System.out.println(qe);
+            // System.out.println(qe);
         }
         System.out.println("Found "+ depcheck.size()+ " earthquakes that match" 
                 + "California at the end");
-                
+       */         
         // testing 2nd case......
         ArrayList<QuakeEntry> phrscheck1 = filterByPhrase(list,"any","Can");
         for (QuakeEntry qe : phrscheck1) {
-            System.out.println(qe);
+            //System.out.println(qe);
         }
-        System.out.println("Found "+ phrscheck1.size()+ " earthquakes that match" 
-                + "Can at any place");
+        System.out.println("Found "+ phrscheck1.size()+ " earthquakes that match the criteria" );
                 
-        
+    /*
         // testing 3rd case......
         ArrayList<QuakeEntry> phrscheck2 = filterByPhrase(list,"start","Explosion");
         for (QuakeEntry qe : phrscheck2) {
-            System.out.println(qe);
+            //System.out.println(qe);
         }
         System.out.println("Found "+ phrscheck2.size()+ " earthquakes that match" 
                 + "Explosion at the start");
-    
+    */
     
     }
     
