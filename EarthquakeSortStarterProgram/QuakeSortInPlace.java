@@ -60,23 +60,48 @@ public class QuakeSortInPlace {
     public void testSort() {
         EarthQuakeParser parser = new EarthQuakeParser(); 
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/earthquakeDataSampleSix2.atom";
         //String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);  
        
         System.out.println("read data for "+list.size()+" quakes");    
         //sortByMagnitude(list);
-        sortByLargestDepth(list);
+        //sortByLargestDepth(list);
+        
+        sortByMagnitudeWithBubbleSort(list);
         for (QuakeEntry qe: list) { 
             System.out.println(qe);
         } 
         
     }
+    public void onePassBubbleSort(ArrayList<QuakeEntry> quakeData, int numSorted){
+        // numSorted can be from 0 to n-1 , where n is the size of arrayList
+        for(int i= numSorted; i<quakeData.size()-1; i++){
+            if(quakeData.get(i).getMagnitude() > quakeData.get(i+1).getMagnitude()){
+                System.out.println("two swapped numbers are"+ quakeData.get(i).getMagnitude()
+                      + " and " + quakeData.get(i+1).getMagnitude());
+                QuakeEntry qe1 =  quakeData.get(i);
+                QuakeEntry qe2 = quakeData.get(i+1);
+                quakeData.set(i, qe2);
+                quakeData.set(i+1,qe1); 
+                
+            }
+        }
+    
+    }
+    
+    public void sortByMagnitudeWithBubbleSort(ArrayList<QuakeEntry> in){
+        for(int i=0; i< in.size();i++){
+        onePassBubbleSort(in,i);
+        }
+  
+    }
+    
     
     public void createCSV() {
         EarthQuakeParser parser = new EarthQuakeParser();
         //String source = "data/nov20quakedata.atom";
-        String source = "data/nov20quakedatasmall.atom";
+        String source = "data/earthquakeDataSampleSix2.atom";
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);
         dumpCSV(list);
