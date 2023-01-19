@@ -1,3 +1,5 @@
+package WordFrequenciesMap;
+
 import edu.duke.*;
 import java.util.*;
 
