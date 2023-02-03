@@ -34,7 +34,7 @@ public class Tester
         st = st.replace('\n', ' ');
         MarkovOne markov = new MarkovOne();
         markov.setTraining(st);
-        ArrayList<String> result= markov.getFollows("t");
+        ArrayList<String> result= markov.getFollows("th");
         System.out.println(result.size());
     }
 }
