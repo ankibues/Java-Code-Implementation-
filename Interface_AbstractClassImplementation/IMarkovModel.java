@@ -1,3 +1,5 @@
+package Interface_AbstractClassImplementation;
+
 
 /**
  * Write a description of interface IMarkovModel here.
@@ -11,4 +13,7 @@ public interface IMarkovModel {
     
     public String getRandomText(int numChars);
     
+    public String toString();
+    
+    public void setRandom(int seed);
 }
