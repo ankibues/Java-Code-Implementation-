@@ -1,8 +1,19 @@
 package Interface_AbstractClassImplementation;
+<<<<<<< Updated upstream
 import java.util.Random;
 
 public class MarkovZero extends AbstractMarkovModel {
        
+=======
+
+
+import java.util.Random;
+
+public class MarkovZero implements IMarkovModel{
+    private String myText;
+    private Random myRandom;
+    
+>>>>>>> Stashed changes
     public MarkovZero() {
         myRandom = new Random();
     }
@@ -27,8 +38,11 @@ public class MarkovZero extends AbstractMarkovModel {
         
         return sb.toString();
     }
+<<<<<<< Updated upstream
     
     public String toString(){
     return "Markov Model of Order 0";
     }
+=======
+>>>>>>> Stashed changes
 }

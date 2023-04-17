@@ -9,6 +9,11 @@ comment3.params=s
 comment3.target=void\ setTraining(java.lang.String)
 comment4.params=numChars
 comment4.target=java.lang.String\ getRandomText(int)
+<<<<<<< Updated upstream
 comment5.params=
 comment5.target=java.lang.String\ toString()
+=======
+comment5.params=key
+comment5.target=java.util.ArrayList\ getFollows(java.lang.String)
+>>>>>>> Stashed changes
 numComments=6

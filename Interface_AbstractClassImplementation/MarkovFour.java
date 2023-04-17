@@ -1,4 +1,8 @@
 package Interface_AbstractClassImplementation;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -8,9 +12,16 @@ import java.util.ArrayList;
  * @author (your name)
  * @version (a version number or a date)
  */
+<<<<<<< Updated upstream
 public class MarkovFour extends AbstractMarkovModel
 {
     
+=======
+public class MarkovFour implements IMarkovModel
+{
+    private String myText;
+    private Random myRandom;
+>>>>>>> Stashed changes
         public MarkovFour()
     {
         myRandom = new Random();
@@ -44,7 +55,23 @@ public class MarkovFour extends AbstractMarkovModel
         
         return sb.toString();
     }
+<<<<<<< Updated upstream
     public String toString(){
     return "Markov Model of Order 4";
+=======
+    
+    public ArrayList<String> getFollows(String key){
+        ArrayList<String> follows = new ArrayList<String>();
+        int pos=0;
+        int ind=0;
+        while(ind !=-1){
+            ind = myText.indexOf(key,pos);
+            if (ind==-1) break;
+            if((ind + key.length())> myText.length()-1) break;
+            follows.add(Character.toString(myText.charAt(ind + key.length())));
+            pos = ind+1;
+        }
+        return follows;
+>>>>>>> Stashed changes
     }
 }

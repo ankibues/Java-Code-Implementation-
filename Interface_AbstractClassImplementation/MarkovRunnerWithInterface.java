@@ -48,6 +48,7 @@ public class MarkovRunnerWithInterface {
         System.out.println("\n----------------------------------");
     }
     
+<<<<<<< Updated upstream
     public void testHashMap(){
     FileResource fr = new FileResource();
     String st = fr.asString();
@@ -57,4 +58,6 @@ public class MarkovRunnerWithInterface {
     runModel(effMarkov,st,size, 615);
     }
     
+=======
+>>>>>>> Stashed changes
 }
