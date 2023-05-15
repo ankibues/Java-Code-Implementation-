@@ -80,7 +80,7 @@ public class EfficientMarkovModel extends AbstractMarkovModel
     }
     
     private void printHashMapInfo(){
-     if(myMap.size()<5){System.out.println("Mappings are: " + myMap);}
+     if(myMap.size()<15){System.out.println("Mappings are: " + myMap);}
      System.out.println("The number of keys are " + myMap.size());
      int maxSize=0;
      ArrayList<String> maxKey= new ArrayList<String>();

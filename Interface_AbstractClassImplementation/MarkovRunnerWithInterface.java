@@ -48,16 +48,16 @@ public class MarkovRunnerWithInterface {
         System.out.println("\n----------------------------------");
     }
     
-<<<<<<< Updated upstream
+
     public void testHashMap(){
     FileResource fr = new FileResource();
     String st = fr.asString();
     st = st.replace('\n', ' ');
-    int size = 200;
+    
+    int size = 50;
     EfficientMarkovModel effMarkov= new EfficientMarkovModel(5);
-    runModel(effMarkov,st,size, 615);
+    runModel(effMarkov,st,size, 42);
     }
     
-=======
->>>>>>> Stashed changes
+
 }

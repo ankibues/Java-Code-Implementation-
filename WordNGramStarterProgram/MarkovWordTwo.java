@@ -29,46 +29,47 @@ public class MarkovWordTwo implements IMarkovModel {
         }        
         return -1;    
     }
+    
     public void setTraining(String text){
-		myText = text.split("\\s+");
-	}
-	
-	public String getRandomText(int numWords){
-		StringBuilder sb = new StringBuilder();
-		int index = myRandom.nextInt(myText.length-2);  // random word to start with
-		String key1 = myText[index];
-		String key2 = myText[index+1];
-		sb.append(key1);
-		sb.append(" ");
-		sb.append(key2);
-		sb.append(" ");
-		for(int k=0; k < numWords-2; k++){
-		    ArrayList<String> follows = getFollows(key1,key2);
-		   // System.out.println("the keys are "+ key1 + " " + key2+ " and the words that follows are");
-		   // System.out.println(follows);
-		    if (follows.size() == 0) {
-		        break;
-		    }
-			index = myRandom.nextInt(follows.size());
-			String next = follows.get(index);
-			sb.append(next);
-			sb.append(" ");
-			key1 = key2;
-			key2 = next;
-			if(indexOf(myText,key1,key2,0)> myText.length-3) {
-        		 index = myRandom.nextInt(myText.length-3);              		
-        		 key1 = myText[index];
-                	 key2 = myText[index+1];
-			 break;
-			 }
-		}
-		
-		return sb.toString().trim();
-	}
-	
+        myText = text.split("\\s+");
+    }
+    
+    public String getRandomText(int numWords){
+        StringBuilder sb = new StringBuilder();
+        int index = myRandom.nextInt(myText.length-2);  // random word to start with
+        String key1 = myText[index];
+        String key2 = myText[index+1];
+        sb.append(key1);
+        sb.append(" ");
+        sb.append(key2);
+        sb.append(" ");
+        for(int k=0; k < numWords-2; k++){
+            ArrayList<String> follows = getFollows(key1,key2);
+           // System.out.println("the keys are "+ key1 + " " + key2+ " and the words that follows are");
+           // System.out.println(follows);
+            if (follows.size() == 0) {
+                break;
+            }
+            index = myRandom.nextInt(follows.size());
+            String next = follows.get(index);
+            sb.append(next);
+            sb.append(" ");
+            key1 = key2;
+            key2 = next;
+            if(indexOf(myText,key1,key2,0)> myText.length-3) {
+                 index = myRandom.nextInt(myText.length-3);                      
+                 key1 = myText[index];
+                     key2 = myText[index+1];
+             break;
+             }
+        }
+        
+        return sb.toString().trim();
+    }
+    
     private ArrayList<String> getFollows(String key1, String key2) {
-	    ArrayList<String> follows = new ArrayList<String>();
-	    int pos=0;
+        ArrayList<String> follows = new ArrayList<String>();
+        int pos=0;
             int ind=0;
         while(ind !=-1){
             ind = indexOf(myText,key1,key2,pos);
